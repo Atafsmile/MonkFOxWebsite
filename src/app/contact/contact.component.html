@@ -1,0 +1,151 @@
+<style>
+     .d-block {
+        width: 200px;
+        /* width of container */
+        height: 300px;
+        /* height of container */
+        object-fit: cover;
+        opacity: 1;
+
+    }
+
+    .centered {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: xx-large;
+    }
+    hr {
+        border: 1px solid;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(8, 132, 180);
+        color: rgb(8, 132, 180);
+        width: 25%;
+    }
+    .btn-info:hover{
+        background-color: rgb(39, 27, 27);
+        border: none;
+        color:white;
+    }
+    
+#social-linnks li {
+    margin-left: 5px;
+    border-radius: 50%;
+
+    
+    display: inline-block;
+    
+}
+
+#social-linnks li a {
+    padding-top:12px ;
+    width: 50px;
+    height: 50px;
+   
+    display: block;
+    color: #fff;
+}
+  /*  .fs-5{
+        text-align: justify;
+    }*/
+
+
+</style>
+<div class="conatiner-fluid">
+    <div class="container-fluid m-0 p-0">
+        <img src="assets/company_contact.jpg" class="w-100 d-block" alt="...">
+        <div class="centered fw-bolder fs-2">Contact</div>
+    </div>
+    
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 p-5">
+            <div class="text-dark fs-1">Get In Touch
+            </div>
+            <hr>
+            <p class="text-dark fs-2 mt-4">Address</p>
+            <p class="fs-5 ">B5, 705, L&T South City, JP Nagar 7th Phase,
+                Bengaluru, Karnataka 560076
+                </p>
+                <p class="text-dark fs-2 mt-4">    Registered Address</p>
+                <p class="fs-5">#601, Dasta Concerto, No 55/2B, Sarjapura Hobli, Anekal,  Kada Agrahara, Bengaluru, 562125. India</p>
+
+                <p class="text-dark fs-2 mt-4">  Email us</p>
+                <p class="fs-5">  info@monkfox.com</p>
+                <p class="text-dark fs-2 mt-4">  Call us</p>
+                <p class="fs-5">   9742844425
+                </p>
+                <div class="linkss">
+                    <nav id="social-linnks">
+                        <ul class="text-center">
+                            <li class="bg-primary"><a href="https://www.facebook.com/monkfox.edu/"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="bg-info"><a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a></li>
+                            <li class="bg-dark"><a href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13804936943&extra_1=s|c|532005756198|e|instagram|&placement=&creative=532005756198&keyword=instagram&partner_id=googlesem&extra_2=campaignid%3D13804936943%26adgroupid%3D122851065245%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-299571704855%26loc_physical_ms%3D9040234%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjwj8eJBhA5EiwAg3z0mw3-UN29QhUHi_E6NFl0n3cT88d1FgofYGcnJf3Jl_lz7O6gevZszhoCE9UQAvD_BwE"><i class="fab fa-instagram"></i></a></li>
+                            <li class="bg-danger"><a href="https://www.youtube.com/watch?v=Ac4L5ixNrCM"><i class="fab fa-youtube"></i></a></li>
+                            <li class="bg-secondary"><a href="https://www.linkedin.com/company/monkfox"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </nav>
+                   
+                </div>
+        </div>
+        <div class="col-6 text-left p-5">
+            <div class="text-dark fs-1">Connect With Us here!
+            </div><hr>
+            <form #regForm='ngForm' (ngSubmit)="Register(regForm)">
+                
+                <div class="row justiy-content-center login-box">
+                  
+               
+               
+                <div class="form-group m-3">
+                    <label for="exampleInputEmail1" class="form-label">Your Name (required)</label>
+
+                  <input type="text" class="form-control  bg-light" name="FirstName" name1 required ngModel #name1="ngModel">
+                  <span class="text-center" *ngIf='name1.touched && name1.invalid'>
+                    please fil your FirstName 
+                                </span>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleInputEmail1" class="form-label ">Your Number (required)</label>
+
+                  <input type="text" class="form-control bg-light" name="lastName" lastname1 required ngModel #lastname1="ngModel">
+                  <span class="text-center" *ngIf='lastname1.touched && lastname1.invalid'>
+                    please fil your latstName 
+                                </span>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleInputEmail1" class="form-label ">Your Email (required)</label>
+
+                  <input type="text" class="form-control bg-light" name="Email"  email required ngModel #email="ngModel">
+                   <span class="text-center" *ngIf='email.touched && !email.valid'>
+                     please enter valid email  
+                   </span>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleInputEmail1" class="form-label ">Your password (required)</label>
+
+                  <input type="password" class="form-control bg-light" name="password" password  required ngModel #password="ngModel">
+                   <span class="text-center" *ngIf='password.touched && !password.valid'>
+                     please enter valid email  
+                   </span>
+                </div>
+                <div class="m-3">
+                    <label for="exampleFormControlTextarea1" class="form-label ">Write Your message here</label>
+                    <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="8"></textarea>
+  </div>                
+                <br>
+                <div class="text-left m-4">
+                  <button type="submit"class="btn btn-info rounded-pill ps-5 pe-5 pt-2 pb-2" id="Register" >Send</button>
+                </div>
+              </div>
+              
+              </form>
+      
+
+        </div>
+    </div>
+</div>
